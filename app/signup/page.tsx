@@ -1,7 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+
+const facts = [
+  "Did you know? Curate the perfect (or most chaotic) playlist, organize activities, and vibe with your guests like never before.",
+  "Did you know? One of our lead developers wrote the code for this App while competing in a national swim meet!",
+  "Did you know? Our AI (powered by Fetch.AI) can ‘talk to’ other AIs and make your party planning even more precise and tailored."
+];
 
 const SignupPage = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,7 +17,12 @@ const SignupPage = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isPasswordMatch, setIsPasswordMatch] = useState(true);
+  const [randomFact, setRandomFact] = useState('');
   const router = useRouter();
+
+  useEffect(() => {
+    setRandomFact(facts[Math.floor(Math.random() * facts.length)]);
+  }, []);
 
   const validateEmail = (email: string) => {
     const isValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
@@ -51,13 +62,10 @@ const SignupPage = () => {
     <div className="h-screen flex flex-col md:flex-row">
       {/* Left Section */}
       <div className="flex-1 flex flex-col justify-center bg-green-500 px-8 py-12 rounded-r-[40px]">
-        <h2 className="text-3xl font-bold text-white mb-4 text-center md:text-left">
-          GET READY TO PLAN <br />
-          UNFORGETTABLE PARTIES <br />
-          EFFORTLESSLY WITH <span className="text-white">VIBESYNC!</span>
-        </h2>
+      <h2 className="text-xl font-semibold text-white italic mb-4 text-center md:text-left">{randomFact}</h2>
+        
         <img
-          src="/fb5c3d30-dbd3-482b-bd70-992fe1e19938-removebg-preview.png"
+          src="/WhatsApp_Image_2025-02-02_at_07.44.36-removebg-preview.png"
           alt="Party Illustration"
           className="w-3/4 mx-auto"
         />
@@ -146,7 +154,7 @@ const SignupPage = () => {
                 value={confirmPassword}
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);
-                  validatePassword(e.target.value); // Validate on confirmPassword change
+                  validatePassword(e.target.value);
                 }}
                 className={`mt-1 block w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none ${
                   isPasswordMatch
@@ -180,15 +188,8 @@ const SignupPage = () => {
             />
             Sign up with Google
           </button>
-          <button className="w-full flex items-center justify-center bg-green-600 text-white border border-gray-300 rounded-lg py-2 px-4 shadow-sm hover:bg-green-700">
-            <img
-              src="/spotify-mobile-apps-icon-free-png.webp"
-              alt="Spotify Icon"
-              className="w-5 h-5 mr-2"
-            />
-            Sign up with Spotify
-          </button>
-          <p className="text-center mt-4 text-sm">
+          
+          <p className="text-center mt-4 text-sm text-black">
             Already have an account?{' '}
             <a href="/login" className="text-purple-600 hover:underline">
               Login
@@ -198,6 +199,5 @@ const SignupPage = () => {
       </div>
     </div>
   );
-};
-
+}
 export default SignupPage;

@@ -12,7 +12,9 @@ export default function Demo() {
       {/* Content Centered on Image */}
       <div className="relative text-center text-white">
         <h1 className="font-serif text-4xl font-bold mb-6 drop-shadow-lg">🎉 Welcome to VibeSync 🎶</h1>
-
+        <p>At VibySync, our mission is to revolutionize party planning by making it effortless, fun, and <br /> slightly chaotic through AI-powered automation, <br />smart event coordination, and seamless music integration</p>
+        <br />
+        
         {/* Buttons */}
         <div className="space-x-4">
           {/* Invite Friends Button */}
@@ -23,9 +25,11 @@ export default function Demo() {
           </Link>
 
           {/* Second Button - Placeholder for Future Action */}
+          <Link href="/plan">
           <button className="bg-blue-500 text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-blue-400 shadow-lg">
             Plan a Event
           </button>
+          </Link>
 
           <button className="bg-red-500 text-white px-6 py-3 rounded-lg font-medium transition duration-300 hover:bg-red-400 shadow-lg">
             Add Song Playlist

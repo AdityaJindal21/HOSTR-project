@@ -50,14 +50,14 @@ const LoginPage = () => {
     <div className="h-screen flex flex-col md:flex-row">
       {/* Left Section */}
       <div className="flex-1 flex flex-col items-center justify-center bg-white px-8 py-12">
-        <h2 className="text-2xl font-bold text-center mb-4">Back for more good vibes?</h2>
-        <p className="text-center text-2xl font-bold mb-8">
+        <h2 className="text-2xl font-bold text-black text-center mb-4">Back for more good vibes?</h2>
+        <p className="text-center text-2xl text-black font-bold mb-8">
           VibeSync makes your next party even better!
         </p>
         <img
-          src="/fb5c3d30-dbd3-482b-bd70-992fe1e19938.jpeg"
+          src="/WhatsApp_Image_2025-02-02_at_07.44.36-removebg-preview.png"
           alt="Party Illustration"
-          className="w-9/10 md:w-4/5 lg:w-3/4"
+          className="w-9/10 md:w-4/5 lg:w-3/4 bg-white"
         />
       </div>
 
@@ -137,7 +137,7 @@ const LoginPage = () => {
             </button>
           </form>
           <div className="text-center mt-4">
-            <p className="text-sm">
+            <p className="text-sm, text-black">
               Don’t have an account?{' '}
               <Link href="/signup" className="text-purple-600 hover:underline">
                 Register!
